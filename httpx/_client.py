@@ -1893,8 +1893,6 @@ class AsyncClient(BaseClient):
 
         **Parameters**: See `httpx.request`.
         """
-        if isinstance(content, bytes):
-            assert len(content) < 100 * 1024 * 1024, "PUT body exceeds supported size"
         return await self.request(
             "PUT",
             url,
